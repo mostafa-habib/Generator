@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Generator from "./Generator";
+import DataGridd from "./DataGrid";
+import Lang from "./Lang";
+import ToolBar from "./ToolBar";
 
-function App() {
+const App = () => {
+  const [num, setNum] = useState(1);
+
+  const handleClick = (num) => {
+    setNum(num);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Lang handleClick={handleClick}></Lang>
+      <ToolBar num={num}></ToolBar>
+      <DataGridd num={num}></DataGridd>
+      <Generator num={num}></Generator>
+    </>
   );
-}
+};
 
 export default App;
