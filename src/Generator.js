@@ -32,12 +32,13 @@ function Generator({ num }) {
               </label>
 
               {/* Know the type of field */}
-              {Object.entries(fieldType).map((it) => {
+              {Object.entries(fieldType).map(function(it) {
                 if (it[1] === item[1].displayType) {
                   tp = it[0].toLowerCase();
                   console.log(tp);
                 }
-              })}
+                return '';
+            })}
 
               {/* Check type of field */}
               {item[1].displayType === 16 ? (
