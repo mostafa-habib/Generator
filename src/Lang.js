@@ -17,6 +17,20 @@ export default function Lang({ handleClick }) {
   };
 
   return (
-    
+    <FormControl className="lang">
+      <InputLabel className="label" id="demo-simple-select-label">
+        {Language === 1 ? "Language" : "اللغة" }
+      </InputLabel>
+      <Select
+        labelId="demo-simple-select-label"
+        id="demo-simple-select"
+        value={Language}
+        label="Language"
+        onChange={handleChange}
+      >
+        <MenuItem value={1}>English</MenuItem>
+        <MenuItem value={2}>عربي</MenuItem>
+      </Select>
+    </FormControl>
   );
 }
